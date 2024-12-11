@@ -1,0 +1,24 @@
+body {
+  background-image: url('../../../public/images/custom-api-development-services-banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.alert-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
