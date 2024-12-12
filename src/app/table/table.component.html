@@ -1,12 +1,26 @@
 <div class="container mt-5">
-  
   <h2>Tabella dati</h2>
+
+  <!-- Campo di ricerca -->
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Cerca per nome, username o email"
+      [(ngModel)]="searchQuery"
+      (input)="onSearchChange()"
+    />
+  </div>
+
+  <!-- Tabella -->
   <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
         <th>Nome</th>
-        <th>username</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Created At</th>
       </tr>
     </thead>
     <tbody>
@@ -14,7 +28,19 @@
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.username }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.created_at }}</td>
       </tr>
     </tbody>
   </table>
+
+  <!-- Paginazione -->
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="filteredData.length"
+    [maxSize]="5"
+    [boundaryLinks]="true"
+    [ellipses]="true">
+  </ngb-pagination>
 </div>
